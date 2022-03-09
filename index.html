@@ -12,7 +12,7 @@
 <body>
     <div class="board">
         <div class="print-btn" onclick="createImge(this)">הדפסה</div>
-        <div class="print-btn" onclick="openImge(this)">פתיחה כתמונה</div>
+        <div class="print-btn" onclick="openImge(this)">הורדת כרטיס</div>
         <p class="ln">לעילוי נשמת שמואל בן בוקא</p>
         <div class="container">
             <div class="main-card">
@@ -41,10 +41,10 @@
             <input type="range" name="border-radius" min="0" max="100" oninput="setPx(this.value, '.main-card', 'borderRadius')">
             <br>    
             <label for="border-height">גובה כרטיס:</label>
-            <input type="range" name="border-radius" min="200" max="400" oninput="setPx(this.value, '.main-card', 'height')">
+            <input type="range" name="border-radius" min="100" max="400" oninput="setPx(this.value, '.main-card', 'height')">
             <br>  
             <label for="border-width">רוחב כרטיס:</label>
-            <input type="range" name="border-radius" min="200" max="400" oninput="setPx(this.value, '.main-card', 'width')">
+            <input type="range" name="border-radius" min="100" max="400" oninput="setPx(this.value, '.main-card', 'width')">
             <br>  
             <label for="card-border">בחר מסגרת:</label>
             <select name="card-border" onchange="setBorderStyle(this)">
@@ -72,10 +72,13 @@
                 <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/4.png);"></div>
                 <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/5.png);"></div>
                 <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/6.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/12.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/13.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/14.png);"></div>
             </div>
             <br>
             <label for="img-size">גודל תמונה:</label>
-            <input type="range" name="img-size" min="100" max="200" oninput="setPx(this.value, '#clown-img', 'width')">
+            <input type="range" name="img-size" min="100" max="350" oninput="setPx(this.value, '#clown-img', 'width')">
             <br>
             <label for="img-x">מיקום אנכי:</label>
             <input type="range" name="img-x" min="-100" max="100" oninput="setD2Position(this.value, '#clown-img', 'top')">
@@ -137,7 +140,6 @@
             <label for="shadow-color">צבע צל:</label>
             <input type="color" name="shadow-color" value="#ff0000" oninput="setValue('0px 0px 20px ' + this.value, '.card-small-title', 'textShadow')">
             <br>
-            <hr>
         </div>
     </div>
 
