@@ -31,7 +31,11 @@
                 <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/8.jpg);"></div>
                 <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/9.jpg);"></div>
                 <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/10.jpg);"></div>
-            </div>            
+                <div class="menue-item" onclick="setValue('none', '.main-card', 'backgroundImage')" style="background-image: url(./imgs/11.jpg);background-size: 100%;background-repeat: no-repeat;"></div>
+            </div>
+            <br>
+            <label for="background-color">צבע רקע:</label>
+            <input type="color" name="background-color" value="#ff0000" oninput="setValue(this.value, '.main-card', 'backgroundColor')">
             <br>
             <label for="border-radius">רדיוס כרטיס:</label>
             <input type="range" name="border-radius" min="0" max="100" oninput="setPx(this.value, '.main-card', 'borderRadius')">
@@ -74,10 +78,10 @@
             <input type="range" name="img-size" min="100" max="200" oninput="setPx(this.value, '#clown-img', 'width')">
             <br>
             <label for="img-x">מיקום אנכי:</label>
-            <input type="range" name="img-x" min="-30" max="100" oninput="setD2Position(this.value, '#clown-img', 'top')">
+            <input type="range" name="img-x" min="-100" max="100" oninput="setD2Position(this.value, '#clown-img', 'top')">
             <br>
             <label for="img-y">מיקום אופקי:</label>
-            <input type="range" name="img-y" min="-30" max="100" oninput="setD2Position(this.value, '#clown-img', 'left')">
+            <input type="range" name="img-y" min="-100" max="100" oninput="setD2Position(this.value, '#clown-img', 'left')">
             <br>
             <label for="img-rotet">סובב:</label>
             <input type="range" name="img-rotet" min="0" max="360" oninput="setTransform(this.value, '#clown-img')">
@@ -90,10 +94,10 @@
             <input type="range" name="title-size" min="5" max="100" oninput="setPx(this.value, '.card-title', 'fontSize')">
             <br>
             <label for="title-x">מיקום אנכי:</label>
-            <input type="range" name="title-x" min="-30" max="100" oninput="setD2Position(this.value, '.card-title', 'top')">
+            <input type="range" name="title-x" min="-100" max="100" oninput="setD2Position(this.value, '.card-title', 'top')">
             <br>
             <label for="title-y">מיקום אופקי:</label>
-            <input type="range" name="title-y" min="-30" max="100" oninput="setD2Position(this.value, '.card-title', 'left')">
+            <input type="range" name="title-y" min="-100" max="100" oninput="setD2Position(this.value, '.card-title', 'left')">
             <br>
             <label for="title-rotet">סובב:</label>
             <input type="range" name="title-rotet" min="0" max="360" oninput="setTransform(this.value, '.card-title')">
@@ -119,10 +123,10 @@
             <input type="range" name="small-title-size" min="5" max="100" oninput="setPx(this.value, '.card-small-title', 'fontSize')">
             <br>
             <label for="small-title-x">מיקום אנכי:</label>
-            <input type="range" name="small-title-x" min="-30" max="100" oninput="setD2Position(this.value, '.card-small-title', 'top')">
+            <input type="range" name="small-title-x" min="-100" max="100" oninput="setD2Position(this.value, '.card-small-title', 'top')">
             <br>
             <label for="small-title-y">מיקום אופקי:</label>
-            <input type="range" name="small-title-y" min="-30" max="100" oninput="setD2Position(this.value, '.card-small-title', 'left')">
+            <input type="range" name="small-title-y" min="-100" max="100" oninput="setD2Position(this.value, '.card-small-title', 'left')">
             <br>
             <label for="small-title-rotet">סובב:</label>
             <input type="range" name="small-title-rotet" min="0" max="360" oninput="setTransform(this.value, '.card-small-title')">
