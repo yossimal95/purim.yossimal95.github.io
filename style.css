@@ -16,6 +16,7 @@ body, html {
 }
 
 .container {
+    box-sizing: content-box;
     padding: 30px;
     border: 50px solid white;
     background-color: white;
@@ -106,9 +107,11 @@ body, html {
     top: 5%;
     left: 10%;
     color:rgb(161, 8, 161);
+    display: inline-block;
 }
 
 .card-small-title {
+    display: inline-block;
     position: absolute;
     direction: rtl;
     font-size: 20pt;
