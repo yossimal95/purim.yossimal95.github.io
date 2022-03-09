@@ -34,6 +34,10 @@ body, html {
     overflow: auto;
 }
 
+.tool-bar input {
+    margin: 20px;
+}
+
 .tool-bar-panel {
     width: 100%;
     box-sizing: border-box;
