@@ -139,6 +139,11 @@ body, html {
 .print-btn:active {
     border: 5px solid rgb(63, 42, 63);
 }
+
+.print-btn:hover {
+    border-color: aqua;
+}
+
 .ln {
     position: absolute;
     bottom: 0%;
