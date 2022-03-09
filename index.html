@@ -93,6 +93,9 @@
 
         <div class="tool-bar-panel">
             <p class="tool-bar-panel-title">כותרת פורים שמח</p>
+            <label for="small-title">שינוי כותרת:</label>
+            <input type="text" placeholder="א פריילעכן פורים.." name="small-title" oninput="setText(this.value, '.card-title')">
+            <br>
             <label for="title-size">גודל גופן:</label>
             <input type="range" name="title-size" min="5" max="100" oninput="setPx(this.value, '.card-title', 'fontSize')">
             <br>
