@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="domToImg.js"></script>
+    <script src="fileSaver.js"></script>
+    <title>פורים שמח!</title>
+</head>
+<body>
+    <div class="board">
+        <div class="print-btn" onclick="createImge(this)">הדפסה</div>
+        <div class="print-btn" onclick="openImge(this)">פתיחה כתמונה</div>
+        <p class="ln">לעילוי נשמת שמואל בן בוקא</p>
+        <div class="container">
+            <div class="main-card">
+                <img id="clown-img" src="imgs/1.png">
+                <p class="card-title">פורים שמח!</p>
+                <p class="card-small-title">ממשפחת כהן </p>
+            </div>
+        </div>        
+    </div>
+    <div class="tool-bar">
+        <div class="tool-bar-panel">
+            <p class="tool-bar-panel-title">רקע</p>
+            <label >בחר תמונה:</label>
+            <div class="tool-bar-panel-menue">
+                <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/7.jpg);"></div>
+                <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/8.jpg);"></div>
+                <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/9.jpg);"></div>
+                <div class="menue-item" onclick="setImge(this, '.main-card', 'bgi')" style="background-image: url(./imgs/10.jpg);"></div>
+            </div>            
+            <br>
+            <label for="border-radius">רדיוס כרטיס:</label>
+            <input type="range" name="border-radius" min="0" max="100" oninput="setPx(this.value, '.main-card', 'borderRadius')">
+            <br>    
+            <label for="border-height">גובה כרטיס:</label>
+            <input type="range" name="border-radius" min="200" max="400" oninput="setPx(this.value, '.main-card', 'height')">
+            <br>  
+            <label for="border-width">רוחב כרטיס:</label>
+            <input type="range" name="border-radius" min="200" max="400" oninput="setPx(this.value, '.main-card', 'width')">
+            <br>  
+            <label for="card-border">בחר מסגרת:</label>
+            <select name="card-border" onchange="setBorderStyle(this)">
+                <option value="none">ללא</option>
+                <option value="solid">סולידי</option>
+                <option value="dashed">קווים</option>
+                <option value="dotted">נקודות</option>
+            </select>
+            <br>
+            <label for="border-size">גודל מסגרת:</label>
+            <input type="range" name="border-size" min="0" max="100" oninput="setPx(this.value, '.main-card', 'borderWidth')">
+            <br>
+            <label for="border-color">צבע מסגרת:</label>
+            <input type="color" name="border-color" value="#ff0000" oninput="setValue(this.value, '.main-card', 'borderColor')">
+            <br>
+            <hr>
+        </div>
+        <div class="tool-bar-panel">
+            <p class="tool-bar-panel-title">ליצן</p>
+            <label>בחר תמונה:</label>
+            <div class="tool-bar-panel-menue">
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/1.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/2.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/3.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/4.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/5.png);"></div>
+                <div class="menue-item" onclick="setImge(this, '#clown-img', 'src')" style="background-image: url(./imgs/6.png);"></div>
+            </div>
+            <br>
+            <label for="img-size">גודל תמונה:</label>
+            <input type="range" name="img-size" min="100" max="200" oninput="setPx(this.value, '#clown-img', 'width')">
+            <br>
+            <label for="img-x">מיקום אנכי:</label>
+            <input type="range" name="img-x" min="-30" max="100" oninput="setD2Position(this.value, '#clown-img', 'top')">
+            <br>
+            <label for="img-y">מיקום אופקי:</label>
+            <input type="range" name="img-y" min="-30" max="100" oninput="setD2Position(this.value, '#clown-img', 'left')">
+            <br>
+            <label for="img-rotet">סובב:</label>
+            <input type="range" name="img-rotet" min="0" max="360" oninput="setTransform(this.value, '#clown-img')">
+            <hr>
+        </div>
+
+        <div class="tool-bar-panel">
+            <p class="tool-bar-panel-title">כותרת פורים שמח</p>
+            <label for="title-size">גודל גופן:</label>
+            <input type="range" name="title-size" min="5" max="100" oninput="setPx(this.value, '.card-title', 'fontSize')">
+            <br>
+            <label for="title-x">מיקום אנכי:</label>
+            <input type="range" name="title-x" min="-30" max="100" oninput="setD2Position(this.value, '.card-title', 'top')">
+            <br>
+            <label for="title-y">מיקום אופקי:</label>
+            <input type="range" name="title-y" min="-30" max="100" oninput="setD2Position(this.value, '.card-title', 'left')">
+            <br>
+            <label for="title-rotet">סובב:</label>
+            <input type="range" name="title-rotet" min="0" max="360" oninput="setTransform(this.value, '.card-title')">
+            <br>
+            <label for="title-color">צבע כותרת:</label>
+            <input type="color" name="title-color" value="#ff0000" oninput="setValue(this.value, '.card-title', 'color')">
+            <br>
+            <label for="shadow-color">צבע צל:</label>
+            <input type="color" name="shadow-color" value="#ff0000" oninput="setValue('0px 0px 20px ' + this.value, '.card-title', 'textShadow')">
+            <br>
+            <hr>
+        </div>
+
+        <div class="tool-bar-panel">
+            <p class="tool-bar-panel-title">שם משפחה</p>
+            <label for="small-title-visibility">שם משפחה (כן/לא):</label>
+            <input type="checkbox" name="small-title-visibility" checked="true" onclick="setVisibility(this.checked, '.card-small-title')">
+            <br>
+            <label for="small-title-family-name">שם משפחה:</label>
+            <input type="text" name="small-title-family-name" oninput="setText('ממשפחת ' + this.value, '.card-small-title')">
+            <br>
+            <label for="small-title-size">גודל גופן:</label>
+            <input type="range" name="small-title-size" min="5" max="100" oninput="setPx(this.value, '.card-small-title', 'fontSize')">
+            <br>
+            <label for="small-title-x">מיקום אנכי:</label>
+            <input type="range" name="small-title-x" min="-30" max="100" oninput="setD2Position(this.value, '.card-small-title', 'top')">
+            <br>
+            <label for="small-title-y">מיקום אופקי:</label>
+            <input type="range" name="small-title-y" min="-30" max="100" oninput="setD2Position(this.value, '.card-small-title', 'left')">
+            <br>
+            <label for="small-title-rotet">סובב:</label>
+            <input type="range" name="small-title-rotet" min="0" max="360" oninput="setTransform(this.value, '.card-small-title')">
+            <br>
+            <label for="small-title-color">צבע כותרת:</label>
+            <input type="color" name="small-title-color" value="#ff0000" oninput="setValue(this.value, '.card-small-title', 'color')">
+            <br>
+            <label for="shadow-color">צבע צל:</label>
+            <input type="color" name="shadow-color" value="#ff0000" oninput="setValue('0px 0px 20px ' + this.value, '.card-small-title', 'textShadow')">
+            <br>
+            <hr>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

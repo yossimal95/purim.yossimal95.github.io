@@ -1,0 +1,145 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    /* overflow: hidden; */
+}
+.board {
+    display: block;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    width: 74%;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    padding: 30px;
+    border: 50px solid white;
+    background-color: white;
+}
+
+.tool-bar {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    width: 25%;
+    background-color: rgb(221, 255, 252);
+    padding: 0px;
+    margin: 0px;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+}
+
+.tool-bar-panel {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    direction: rtl;
+}
+
+.tool-bar-panel-title {
+    text-align: center;
+    direction: rtl;
+    font-size: 20pt;
+    font-weight: bold;
+    color:rgb(25, 25, 73);
+}
+
+.tool-bar-panel-menue {
+    width: 100%;
+    background-color: rgb(239, 254, 255);
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.menue-item {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    background-size: cover;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.main-card {
+    height: 150px;
+    width: 400px;
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+    top: 20%;
+    box-sizing: border-box;
+    background-image: url(imgs/10.jpg);
+    background-size: contain;
+    border: 2px dashed red;
+    outline: 10px solid white;
+    border-radius: 30px;
+}
+
+.main-card img {
+    direction: ltr;
+    top: 0%;
+    left: 60%;
+    display: block;
+    width: 200px;
+    position: absolute;
+}
+
+.card-title {
+    position: absolute;
+    direction: rtl;
+    font-size: 25pt;
+    font-family: 'Guttman Yad-Brush','arial', sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 0px 0px 20px orange;
+    top: 5%;
+    left: 10%;
+    color:rgb(161, 8, 161);
+}
+
+.card-small-title {
+    position: absolute;
+    direction: rtl;
+    font-size: 20pt;
+    font-family: 'Guttman Yad-Brush','arial', sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+    top: 40%;
+    left: 7%;
+    color:rgb(255, 100, 177);
+    text-shadow: 0px 0px 20px rgb(199, 199, 255);
+}
+
+.print-btn {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: yellow;
+    color: slateblue;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 5px solid tomato;
+} 
+
+.print-btn:active {
+    border: 5px solid rgb(63, 42, 63);
+}
+.ln {
+    position: absolute;
+    bottom: 0%;
+    text-align: center;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: silver;
+}
