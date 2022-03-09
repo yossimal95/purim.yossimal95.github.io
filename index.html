@@ -115,12 +115,12 @@
         </div>
 
         <div class="tool-bar-panel">
-            <p class="tool-bar-panel-title">שם משפחה</p>
-            <label for="small-title-visibility">שם משפחה (כן/לא):</label>
+            <p class="tool-bar-panel-title">שם שולח</p>
+            <label for="small-title-visibility">שם שולח (כן/לא):</label>
             <input type="checkbox" name="small-title-visibility" checked="true" onclick="setVisibility(this.checked, '.card-small-title')">
             <br>
-            <label for="small-title-family-name">שם משפחה:</label>
-            <input type="text" name="small-title-family-name" oninput="setText('ממשפחת ' + this.value, '.card-small-title')">
+            <label for="small-title-family-name">שם שולח:</label>
+            <input type="text" placeholder="משה כהן" name="small-title-family-name" oninput="setText(this.value, '.card-small-title')">
             <br>
             <label for="small-title-size">גודל גופן:</label>
             <input type="range" name="small-title-size" min="5" max="100" oninput="setPx(this.value, '.card-small-title', 'fontSize')">
