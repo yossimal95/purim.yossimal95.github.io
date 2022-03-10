@@ -1,29 +1,9 @@
-const setPx = (value, target, property) => {
-    document.querySelector(target).style[property] = value + 'px';
-}
-
 const setValue = (value, target, property) => {
     document.querySelector(target).style[property] = value;
 }
 
-const setD2Position = (value, target, property) => {
-    document.querySelector(target).style[property] = value + '%';
-}
-
-const setTransform = (value, target) => {
-    document.querySelector(target).style.transform = 'rotate(' + value +'deg)';
-}
-
-const setVisibility = (value, target) => {
-    document.querySelector(target).style.display = value ? 'block' : 'none';
-}
-
 const setText = (value, target) => {
     document.querySelector(target).innerText = value;
-}
-
-const setBorderStyle = (element) => {
-    document.querySelector(".main-card").style.borderStyle = element.options[element.selectedIndex].value 
 }
 
 const setImge = (element, target, type) => {
@@ -72,10 +52,19 @@ const printCard = (src) => {
     .print-table td img  {
         width: 110%;
     }
+
+    button {
+        display: block;
+        margin: auto;
+    }
+
+    @media print {
+        button { display: none; }
+    }
     </style>
     `;
 
-    let result = '<p>לעילוי נשמת שמואל בן בוקא</p><table class="print-table">';
+    let result = '<button onclick="print()">הדפס</button><p>לעילוי נשמת שמואל בן בוקא</p><table class="print-table">';
     for (let index = 0; index < 6; index++) {
         result += '<tr><td><img src="'+ src +'"></td><td><img src="'+ src +'"></tr>'
     }
