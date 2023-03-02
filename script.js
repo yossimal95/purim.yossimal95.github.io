@@ -1,4 +1,4 @@
-window.addEventListener("load", ()=>{ if (screen.width < 900) { alert('הממשק נתמך רק במחשב ולא במובייל.. /-:'); } });
+//window.addEventListener("load", ()=>{ if (screen.width < 900) { alert('הממשק נתמך רק במחשב ולא במובייל.. /-:'); } });
 
 const setValue = (value, target, property) => {
     document.querySelector(target).style[property] = value;
