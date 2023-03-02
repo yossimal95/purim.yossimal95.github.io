@@ -58,6 +58,7 @@ const printCard = (src) => {
     button {
         display: block;
         margin: auto;
+        padding: 10px 20px;
     }
 
     @media print {
