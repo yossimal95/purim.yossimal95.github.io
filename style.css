@@ -1,9 +1,16 @@
-body, html {
+@font-face {
+    font-family: 'Guttman Yad-Brush';
+    src: url(./GYADBR.TTF);
+}
+
+body,
+html {
     padding: 0px;
     margin: 0px;
     height: 100%;
     /* overflow: hidden; */
 }
+
 .board {
     display: block;
     float: left;
@@ -53,7 +60,7 @@ body, html {
     direction: rtl;
     font-size: 20pt;
     font-weight: bold;
-    color:rgb(25, 25, 73);
+    color: rgb(25, 25, 73);
 }
 
 .tool-bar-panel-menue {
@@ -100,13 +107,13 @@ body, html {
     position: absolute;
     direction: rtl;
     font-size: 25pt;
-    font-family: 'Guttman Yad-Brush','arial', sans-serif;
+    font-family: 'Guttman Yad-Brush', 'arial', sans-serif;
     font-weight: bold;
     white-space: nowrap;
     text-shadow: 0px 0px 20px orange;
     top: 5%;
     left: 10%;
-    color:rgb(161, 8, 161);
+    color: rgb(161, 8, 161);
     display: inline-block;
 }
 
@@ -115,12 +122,12 @@ body, html {
     position: absolute;
     direction: rtl;
     font-size: 20pt;
-    font-family: 'Guttman Yad-Brush','arial', sans-serif;
+    font-family: 'Guttman Yad-Brush', 'arial', sans-serif;
     font-weight: bold;
     white-space: nowrap;
     top: 40%;
     left: 7%;
-    color:rgb(255, 100, 177);
+    color: rgb(255, 100, 177);
     text-shadow: 0px 0px 20px rgb(199, 199, 255);
 }
 
@@ -137,7 +144,7 @@ body, html {
     cursor: pointer;
     border-radius: 20px;
     border: 5px solid tomato;
-} 
+}
 
 .print-btn:active {
     border: 5px solid rgb(63, 42, 63);
@@ -154,4 +161,32 @@ body, html {
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color: silver;
+    user-select: none;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .board {
+        flex: 1;
+        flex-shrink: 0;
+        width: 100%;
+        overflow-x: hidden;
+        zoom: 70%;
+    }
+
+    .tool-bar {
+        border-top: 1px solid rgb(74, 68, 68);
+        flex-basis: 300px;
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    .tool-bar-panel {
+        display: inline-block;
+        max-width: 100%;
+    }
 }
